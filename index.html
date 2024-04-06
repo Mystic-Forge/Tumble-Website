@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tumble Leaderboards</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <template id="user_row">
+    <tr>
+      <td>1st</td>
+      <td>Coffee Maker</td>
+      <td>00:04.256</td>
+      <td>8d ago</td>
+      <td>your nan</td>
+    </tr>
+  </template>
+  <template id="replay_button">
+    <a target="_blank" href="https://youtube.com/" title="Watch replay"><img src="images/IconWatchReplay.svg"></a>
+  </template>
+  <div class="header">
+    <select class="dropdown" id="level_select">
+      <option value="0">Level 1</option>
+      <option value="1">Level 2</option>
+      <option value="2">Level 3</option>
+      <option value="3">Level 4</option>
+    </select>
+    <div id="nsr" class="toggle cheat" title="No structure restrictions"><img src="images/NoStructureRestrictions.svg"></div>
+    <div id="iaa" class="toggle cheat" title="Infinite air actions"><img src="images/InfiniteAirActions.svg"></div>
+    <div id="ncd" class="toggle cheat" title="No cooldowns"><img src="images/NoCooldowns.svg"></div>
+    <div id="pc" class="toggle checked" title="Show PC times"><img src="images/IconPC.svg"></div>
+    <div id="vr" class="toggle checked" title="Show VR times"><img src="images/IconVR.svg"></div>
+  </div>
+  <div class="main">
+    <table>
+      <thead>
+        <tr>
+          <td>Place</td>
+          <td>Username</td>
+          <td>Time</td>
+          <td>Date</td>
+          <td>Modifiers</td>
+        </tr>
+      </thead>
+      <tbody id="times_root">
+        <tr>
+          <td>1st</td>
+          <td>Coffee Maker
+            <a target="_blank" href="https://youtube.com/" title="Watch replay"><img src="images/IconWatchReplay.svg"></a>
+          </td>
+          <td>00:04.256</td>
+          <td>8d ago</td>
+          <td>your nan</td>
+        </tr>
+        <tr>
+          <td>2th</td>
+          <td>art0007i</td>
+          <td>00:04.278</td>
+          <td>13m ago</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>3st</td>
+          <td>art0007i
+            <a target="_blank" href="https://youtube.com/" title="Watch replay"><img src="images/IconWatchReplay.svg"></a>
+          </td>
+          <td>00:04.278</td>
+          <td>13m ago</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
