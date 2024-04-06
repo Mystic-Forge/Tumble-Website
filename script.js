@@ -49,6 +49,16 @@ function ordinal_suffix_of(i) {
   return i + "th";
 }
 
+function insert_img(element, source, alt) {
+  var img = document.createElement("img");
+  img.src = source;
+  if(alt) {
+    img.alt = alt;
+    img.title = alt;
+  }
+  element.appendChild(img);
+}
+
 const msInMinute = 1000 * 60;
 const msInHour = msInMinute * 60;
 const msInDay = msInHour * 24;
@@ -105,11 +115,19 @@ function redraw_times() {
 
     const clone = user_row.content.cloneNode(true);
     let td = clone.querySelectorAll("td");
+    var nameHolder = td[1].querySelector(".username");
     td[0].textContent = ordinal_suffix_of(idx);
-    td[1].textContent = time.pn;
+    nameHolder.textContent = time.pn;
     td[2].textContent = new Date(time.t*1000).toLocaleDateString('en-US', timeFormatter).substring("1/1/1970 ,".length);
     td[3].textContent = timeString;
-    td[4].textContent = "";
+    
+    // This code is bad if extra platforms are added, but why would there be
+    if(time.p == 1) insert_img(nameHolder, "images/IconPC.svg");
+    else if (time.p == 2)  insert_img(nameHolder, "images/IconVR.svg");
+    
+    if(t_noRestrictions) insert_img(td[4], "images/NoStructureRestrictions.svg", "No structure restrictions");
+    if(t_infAir) insert_img(td[4], "images/InfiniteAirActions.svg", "Infinite air actions");
+    if(t_noCooldowns) insert_img(td[4], "images/NoCooldowns.svg", "No cooldowns");
 
     if(time.r) {
       const replayClone = replay_button.content.cloneNode(true);

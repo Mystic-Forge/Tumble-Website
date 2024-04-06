@@ -21,6 +21,7 @@ html,body {
 
 body {
   margin: 0;
+  font-size: 12pt;
   font-family: sans-serif;
   background-color: var(--bg-color);
   display: flex;
@@ -109,12 +110,25 @@ body {
   gap: 16px;
 }
 
+.username {
+    display: flex;
+    gap: 4px;
+}
+
+.modifiers {
+  line-height: 0;
+}
+
+.modifiers img {
+  margin-right:4px;
+}
+
 .main tbody a {
   display: flex;
   align-items: end;
 }
 
 .main tbody img {
-  height: 15px;
-  width: 15px;
+  height: 1.2em;
+  width: 1.2em;
 }
